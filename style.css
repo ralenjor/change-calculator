@@ -62,11 +62,11 @@ input {
     text-align: left;
 }
 
-.change-due {
+#change-due {
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 10px;
-
+    color: red;
 }
 
 #output {

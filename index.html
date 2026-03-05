@@ -4,6 +4,9 @@
   <head>
 
     <meta charset="utf-8">
+     <meta http-equiv="Content-Security-Policy" 
+        content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none';">
+
     <title>Change Calculator</title>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -29,6 +32,6 @@
   <p id="output"></p>
 </div>
 
-    <script src = "main.js"></script>
+    <script src = "main.js" type="module"></script>
   </body>
 </html>
