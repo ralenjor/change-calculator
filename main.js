@@ -57,9 +57,9 @@ function validateInputs(amountDue, amountReceived){
 
 function handleClickEvent(e) {
 
-    // get raw values as strings
-    const rawDue = document.getElementById('amount-due').value;
-    const rawReceived = document.getElementById('amount-received').value;
+    // take raw values and strip any dollar signs that may exist
+    const rawDue = document.getElementById('amount-due').value.replace('$', '');
+    const rawReceived = document.getElementById('amount-received').value.replace('$', '');
 
     // sanitize values
     const cleanDue = sanitize(rawDue);
@@ -70,8 +70,8 @@ function handleClickEvent(e) {
 
     if (!validation.valid) {
         // show errors and stop
-        document.getElementById('output').textContent = '';
-        document.getElementById('change-due').textContent = validation.errors.join(' | ');
+    document.getElementById('results-wrapper').style.display = 'block';
+    document.getElementById('change-due').textContent = validation.errors.join(' | ');
         return;
     }
 
@@ -84,13 +84,14 @@ function handleClickEvent(e) {
     const totalChange = Number(amountReceived - amountDue).toFixed(2);
     const changeArray = calculateChange(amountDue, amountReceived);
 
-    document.getElementById('output').innerHTML = 
-    `<h2 style="margin-bottom: 10px;">Change Due: $${totalChange} </h2> 
-    <p>Dollars:     ${changeArray[0]}</p>
-    <p>Quarters:    ${changeArray[1]}</p>
-    <p>Dimes:       ${changeArray[2]}</p>
-    <p>Nickels:     ${changeArray[3]}</p>
-    <p>Pennies:     ${changeArray[4]}`
+    document.getElementById('results-wrapper').style.display = 'block';
+
+    document.getElementById('total-output').textContent   = `Change Due: $${totalChange}`;
+    document.getElementById('dollars-output').textContent  = `${changeArray[0]}`;
+    document.getElementById('quarters-output').textContent = `${changeArray[1]}`;
+    document.getElementById('dimes-output').textContent    = `${changeArray[2]}`;
+    document.getElementById('nickels-output').textContent  = `${changeArray[3]}`;
+    document.getElementById('pennies-output').textContent  = `${changeArray[4]}`;
 }
 
     document.getElementById('calculate-change').onclick = handleClickEvent;

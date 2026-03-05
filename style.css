@@ -57,21 +57,53 @@ input {
     box-sizing: border-box;
 }
 
-.results-wrapper {
+#results-wrapper {
+    display: none;
     width: 1000px;
     text-align: left;
+    margin: 0 auto;
 }
 
+/* this is the error message */
 #change-due {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: red;
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 10px;
 }
 
-#output {
-    min-height: 500px;
-    line-height: 1.2;
-    font-size: 18px;
-    border: 3px;
+/* Change Due: $6.66" total line */
+#total-output {
+  font-size: 28px;
+  font-weight: bold;
+  color: #E8E2DB;
+  border-bottom: 2px solid #E8E2DB;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* denomination label (dollars, quarters, etc) */
+.coin-label {
+  display: inline-block;
+  width: 120px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #E8E2DB;
+}
+
+.coin-row p {
+  margin: 2px;
+  padding: 0;
+}
+
+.coin-row {
+  display: flex;
+  align-items: center;
+  margin: 4px
+}
+
+/* number for denomination value */
+.coin-value {
+  font-size: 20px;
+  color: #E8E2DB;
 }

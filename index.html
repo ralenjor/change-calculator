@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
      <meta http-equiv="Content-Security-Policy" 
-        content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none';">
+      content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; object-src 'none';">
 
     <title>Change Calculator</title>
     <link rel="stylesheet" href="style.css">
@@ -27,9 +27,14 @@
       <div class="calculate">
       <p><button id="calculate-change">Calculate</button></p>
       </div>
-<div class id="results-wrapper">
+<div id="results-wrapper">
   <p id="change-due"></p>
-  <p id="output"></p>
+  <p id="total-output"></p>
+  <div class="coin-row"><span class="coin-label">Dollars: </span><p id="dollars-output" class="coin-value"></p></div>
+  <div class="coin-row"><span class="coin-label">Quarters: </span><p id="quarters-output" class="coin-value"></p></div>
+  <div class="coin-row"><span class="coin-label">Dimes: </span><p id="dimes-output" class="coin-value"></p></div>
+  <div class="coin-row"><span class="coin-label">Nickels: </span><p id="nickels-output" class="coin-value"></p></div>
+  <div class="coin-row"><span class="coin-label">Pennies: </span><p id="pennies-output" class="coin-value"></p></div>
 </div>
 
     <script src = "main.js" type="module"></script>
