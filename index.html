@@ -2,13 +2,33 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <meta charset="utf-8">
     <title>Change Calculator</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- Write your markup here -->
 
-    <!-- Don't forget to add your <script> tag here -->
+     <div class="change-container">
+      <h1 class="title">Change Calculator</h1>
+      </div>
+      <div class="text-container">
+        <span class="left-text">What is the total cost?</span><span class="right-text">How much did the customer give you?</span>
+        </div>
+        
+      
+      <div class="input-container">
+        <input id="amount-due" type="text" placeholder="$1.00"/>
+        <input id="amount-received" type="text" placeholder="$1.00"/>
+      </div>
+      <div class="calculate">
+      <p><button id="calculate-change">Calculate</button></p>
+      </div>
+<div class id="results-wrapper">
+  <p id="change-due"></p>
+  <p id="output"></p>
+</div>
 
+    <script src = "main.js"></script>
   </body>
 </html>
