@@ -41,7 +41,7 @@ function validateInputs(amountDue, amountReceived){
 
     const errors = [...dueResult.errors, ...receivedResult.errors];
 
-    // Extra business check logic, can't give less than cost
+    // check logic, can't give less than cost
     if (dueResult.valid && receivedResult.valid) {
         if (Number(amountReceived) < Number(amountDue)) {
             errors.push("Amount received cannot be less than the total cost.");
